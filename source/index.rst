@@ -4,13 +4,7 @@
 .. toctree::
    :numbered:
    :maxdepth: 2
-   :caption: HTML和CSS:
+   :caption: 内容索引:
 
    html/index
-
-.. toctree::
-   :numbered:
-   :maxdepth: 2
-   :caption: ECMAScript:
-
    ecmascript/index
