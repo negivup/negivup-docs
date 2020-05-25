@@ -271,7 +271,33 @@ Babel 是一个工具链，主要作用就是将 ECMAScript 2015+ 版本的代�
       return item + 1;
     });
 
+Babel 的工作原理：
+
+|babel01|
+
+从上图可以看出，Babel 做了三件事：
+
+1. 使用解析器将代码解析成抽象语法树（Abstract Syntax Tree）
+2. 使用 plugins/presets 处理抽象语法树并生成新的语法树
+3. 将最终的抽象语法树生成新的代码
+
+Babel 在转译代码的过程中需要多种插件配合才能生成低版本浏览器需要的代码，如果不配置插件，那么 Babel 会原样输出代码。
+
+自己手动配置插件存在各种弊端，故此官方提供了一些预设的插件集合，称为 preset。plugin 和 preset 的关系，preset 是 plugin 组成的集合。
+
+需要注意的是，Babel 默认情况下只转译新标准引入的语法，对于新标准中引入的原生对象，部分原生对象新增的方法（如 Proxy、Set 等），这些 Babel 是不会转译的，需要自己引入 polyfill，具体可以参考 `【JavaScript】深入理解Babel原理及其使用 <https://www.jianshu.com/p/e9b94b2d52e2>`_。
+
 ESLint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+|eslint01|
+
+ESLint 是一个插件化、可组装的 JavaScript 和 JSX 检查工具。通过多种规则检查语法是否符合规范。规则的检查等级分为三个：
+
+1. off 或 0 - 关闭规则
+2. warn 或 1 - 警告级别
+3. error 或 2 - 错误级别
+
 .. |console01| image:: ../_static/images/console01.png
+.. |babel01| image:: ../_static/images/babel01.jpeg
+.. |eslint01| image:: ../_static/images/eslint01.png
